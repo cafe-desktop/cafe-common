@@ -1,10 +1,10 @@
 dnl **Based on GNOME's code coverage**
-dnl MATE_CODE_COVERAGE
+dnl CAFE_CODE_COVERAGE
 dnl
 dnl Defines CODE_COVERAGE_CFLAGS and CODE_COVERAGE_LDFLAGS which should be
 dnl included in the CFLAGS and LIBS/LDFLAGS variables of every build target
 dnl (program or library) which should be built with code coverage support.
-dnl Also defines MATE_CODE_COVERAGE_RULES which should be substituted in your
+dnl Also defines CAFE_CODE_COVERAGE_RULES which should be substituted in your
 dnl Makefile; and $enable_code_coverage which can be used in subsequent
 dnl configure output.
 dnl
@@ -16,21 +16,21 @@ dnl This file is licenced under LGPLv2.1+.
 dnl
 dnl Usage example:
 dnl configure.ac:
-dnl    MATE_CODE_COVERAGE
+dnl    CAFE_CODE_COVERAGE
 dnl
 dnl Makefile.am:
-dnl    @MATE_CODE_COVERAGE_RULES@
+dnl    @CAFE_CODE_COVERAGE_RULES@
 dnl    my_program_LIBS = … $(CODE_COVERAGE_LDFLAGS) …
 dnl    my_program_CFLAGS = … $(CODE_COVERAGE_CFLAGS) …
 dnl
 dnl This results in a “check-code-coverage” rule being added to any Makefile.am
-dnl which includes “@MATE_CODE_COVERAGE_RULES@” (assuming the module has been
+dnl which includes “@CAFE_CODE_COVERAGE_RULES@” (assuming the module has been
 dnl configured with --enable-code-coverage). Running `make check-code-coverage`
 dnl in that directory will run the module’s test suite (`make check`) and build
 dnl a code coverage report detailing the code which was touched, then print the
 dnl URI for the report.
 
-AC_DEFUN([MATE_CODE_COVERAGE],[
+AC_DEFUN([CAFE_CODE_COVERAGE],[
 	dnl Check for --enable-code-coverage
 	AC_MSG_CHECKING([whether to build with code coverage support])
 	AC_ARG_ENABLE([code-coverage], AS_HELP_STRING([--enable-code-coverage], [Whether to enable code coverage support]),, enable_code_coverage=no)
@@ -85,7 +85,7 @@ AC_DEFUN([MATE_CODE_COVERAGE],[
 		AC_SUBST([CODE_COVERAGE_LDFLAGS])
 	])
 
-MATE_CODE_COVERAGE_RULES='
+CAFE_CODE_COVERAGE_RULES='
 # Code coverage
 #
 # Optional:
@@ -160,6 +160,6 @@ DISTCHECK_CONFIGURE_FLAGS += --disable-code-coverage
 .PHONY: check-code-coverage code-coverage-capture code-coverage-capture-hook code-coverage-clean
 '
 
-	AC_SUBST([MATE_CODE_COVERAGE_RULES])
-	m4_ifdef([_AM_SUBST_NOTMAKE], [_AM_SUBST_NOTMAKE([MATE_CODE_COVERAGE_RULES])])
+	AC_SUBST([CAFE_CODE_COVERAGE_RULES])
+	m4_ifdef([_AM_SUBST_NOTMAKE], [_AM_SUBST_NOTMAKE([CAFE_CODE_COVERAGE_RULES])])
 ])

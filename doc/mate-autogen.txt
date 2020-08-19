@@ -1,9 +1,9 @@
 NAME
-  mate-autogen - generates all makefiles for MATE packages
+  mate-autogen - generates all makefiles for CAFE packages
 SYNOPSIS
   mate-autogen
 DESCRIPTION
-  mate-autogen generates all makefiles for MATE packages
+  mate-autogen generates all makefiles for CAFE packages
   
   To make use of the common autogen script, create a stub autogen.sh
   script in your module. Take the example in

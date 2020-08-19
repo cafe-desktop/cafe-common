@@ -13,11 +13,11 @@
 
 ### mate-common 1.23.3
 
-  * update MATE_CXX_WARNINGS macro
+  * update CAFE_CXX_WARNINGS macro
 
 ### mate-common 1.23.2
 
-  * Set compiler debug flags in MATE_DEBUG_CHECK
+  * Set compiler debug flags in CAFE_DEBUG_CHECK
 
 ### mate-common 1.23.1
 
@@ -55,7 +55,7 @@
 
 ### mate-common 1.14.0
 
-  * Remove references to obsolete MATE components
+  * Remove references to obsolete CAFE components
 
 ### mate-common 1.12.0
 
