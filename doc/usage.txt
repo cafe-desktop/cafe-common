@@ -1,0 +1,25 @@
+This module contains various files needed to bootstrap MATE modules
+built from git.  It contains the following components:
+ 1. A common "autogen.sh" script that can be used to configure a
+    source directory checked out from git.
+ 2. Some commonly used macros (quite a small set these days -- macros
+    should be packaged with their respective modules).
+ 3. Some files used to build user documentation.
+
+To make use of the common autogen script, create a stub autogen.sh
+script in your module. See the example script in autogen.sh.example
+file in mate-common documentation folder.
+
+Then put the following in your configure.ac or configure.in file:
+  MATE_COMMON_INIT
+
+This macro is equivalent to the following two lines (which you can use
+instead if you don't want to depend on mate-common macros):
+  AC_SUBST([ACLOCAL_AMFLAGS], ["\${ACLOCAL_FLAGS}"])
+
+Or if you are using the AC_CONFIG_MACRO_DIR macro:
+  AC_SUBST([ACLOCAL_AMFLAGS], ["-I $ac_macro_dir \${ACLOCAL_FLAGS}"])
+
+This will make sure that autoconf macros will be found when you
+rebuild the package without rerunning autogen.sh.
+

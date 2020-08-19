@@ -1,0 +1,76 @@
+### mate-common 1.24.2
+
+  * mate-compiler-flags: add -Wno-unused-parameter to maximum c++ warnings
+  * mate-compiler-flags: disable '-Wno-unused' and '-Wno-sign-compare'
+
+### mate-common 1.24.1
+
+  * silent -Wunused-parameter for maximum warning level
+
+### mate-common 1.24.0
+
+  * bump version
+
+### mate-common 1.23.3
+
+  * update MATE_CXX_WARNINGS macro
+
+### mate-common 1.23.2
+
+  * Set compiler debug flags in MATE_DEBUG_CHECK
+
+### mate-common 1.23.1
+
+  * Check if AX_APPEND_FLAG and AX_CHECK_COMPILE_FLAG are available
+
+### mate-common 1.23.0
+
+  * update mate-compiler-flags macro
+
+### mate-common 1.22.0
+
+  * initial Travis-CI
+
+### mate-common 1.21.0
+
+  * bump version
+
+### mate-common 1.20.0
+
+  * bump version
+
+### mate-common 1.19.0
+
+  * bump version
+
+### mate-common 1.18.0
+
+  * NEWS: use consistent, project wide, markdown-like formatting
+    to make generating release announcements easier
+
+### mate-common 1.16.0
+
+  * Check only for autoreconf in mate-autogen as autoconf, automake,
+    libtool, gettext are already checked by autoreconf
+
+### mate-common 1.14.0
+
+  * Remove references to obsolete MATE components
+
+### mate-common 1.12.0
+
+  * Support lcov 1.12
+  * Update docs and example script
+
+### mate-common 1.10.0
+
+  * Add support for automake 1.15
+  * Support lcov 1.11
+  * Check for appdata-xml.m4 with APPDATA_XML
+  * Run glib-gettexize if using GLib gettext
+
+### mate-common 1.8.0
+
+  * Replace mate-doc-utils with yelp-tools
+  * Cherry pick many improvements from gnome-common
+  * Use autoreconf
