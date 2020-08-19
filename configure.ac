@@ -1,5 +1,5 @@
 AC_PREREQ(2.54)
-AC_INIT([cafe-common], [1.24.2], [https://github.com/cafe-desktop/cafe-common])
+AC_INIT([cafe-common], [0.0.1], [https://github.com/cafe-desktop/cafe-common])
 
 AC_CONFIG_SRCDIR([macros/cafe-autogen])
 
