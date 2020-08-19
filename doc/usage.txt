@@ -8,13 +8,13 @@ built from git.  It contains the following components:
 
 To make use of the common autogen script, create a stub autogen.sh
 script in your module. See the example script in autogen.sh.example
-file in mate-common documentation folder.
+file in cafe-common documentation folder.
 
 Then put the following in your configure.ac or configure.in file:
   CAFE_COMMON_INIT
 
 This macro is equivalent to the following two lines (which you can use
-instead if you don't want to depend on mate-common macros):
+instead if you don't want to depend on cafe-common macros):
   AC_SUBST([ACLOCAL_AMFLAGS], ["\${ACLOCAL_FLAGS}"])
 
 Or if you are using the AC_CONFIG_MACRO_DIR macro:

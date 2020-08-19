@@ -51,12 +51,12 @@ AC_DEFUN([CAFE_CODE_COVERAGE],[
 		AC_CHECK_PROG([GENHTML], [genhtml], [genhtml])
 
 		AS_IF([ test "$LCOV" ], [
-			AC_CACHE_CHECK([for lcov version], mate_cv_lcov_version, [
-				mate_cv_lcov_version=invalid
+			AC_CACHE_CHECK([for lcov version], cafe_cv_lcov_version, [
+				cafe_cv_lcov_version=invalid
 				lcov_version=`$LCOV -v 2>/dev/null | $SED -e 's/^.* //'`
 				for lcov_check_version in $lcov_version_list; do
 					if test "$lcov_version" = "$lcov_check_version"; then
-						mate_cv_lcov_version="$lcov_check_version (ok)"
+						cafe_cv_lcov_version="$lcov_check_version (ok)"
 					fi
 				done
 			])
@@ -65,7 +65,7 @@ AC_DEFUN([CAFE_CODE_COVERAGE],[
 			AC_MSG_ERROR([$lcov_msg])
 		])
 
-		case $mate_cv_lcov_version in
+		case $cafe_cv_lcov_version in
 			""|invalid[)]
 				lcov_msg="You must have one of the following versions of lcov: $lcov_version_list (found: $lcov_version)."
 				AC_MSG_ERROR([$lcov_msg])

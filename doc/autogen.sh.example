@@ -3,17 +3,17 @@
 srcdir=`dirname $0`
 [ -z "$srcdir" ] && srcdir=.
 
-PKG_NAME=mate-package
+PKG_NAME=cafe-package
 
 if [ ! -f "$srcdir/configure.ac" ]; then
     echo "$srcdir doesn't look like source directory for $PKG_NAME" >&2
     exit 1
 fi
 
-which mate-autogen.sh || {
-    echo "You need to install mate-common"
+which cafe-autogen.sh || {
+    echo "You need to install cafe-common"
     exit 1
 }
 
-. mate-autogen
+. cafe-autogen
 

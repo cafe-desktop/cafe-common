@@ -1,4 +1,4 @@
-# mate-common.m4
+# cafe-common.m4
 #
 #   Copyright (C) 2011 Perberos <perberos@gmail.com>
 #

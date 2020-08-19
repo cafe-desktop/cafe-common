@@ -6,7 +6,7 @@ test -z "$srcdir" && srcdir=.
 
 REQUIRED_AUTOMAKE_VERSION=1.9
 
-PKG_NAME="mate-common"
+PKG_NAME="cafe-common"
 
 (test -f $srcdir/configure.ac) || {
     echo -n "**Error**: Directory "\`$srcdir\'" does not look like the"
@@ -14,5 +14,5 @@ PKG_NAME="mate-common"
     exit 1
 }
 
-. $srcdir/macros/mate-autogen
+. $srcdir/macros/cafe-autogen
 

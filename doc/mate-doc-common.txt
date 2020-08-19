@@ -1,9 +1,9 @@
 NAME
-  mate-doc-common - include the standard user documentation build files
+  cafe-doc-common - include the standard user documentation build files
 SYNOPSIS
-  mate-doc-common
+  cafe-doc-common
 DESCRIPTION
-  This script is used by mate-autogen to include the standard user
+  This script is used by cafe-autogen to include the standard user
   documentation build files in a CAFE package.
   
   To automatically include the standard user documentation build files (omf.make
@@ -19,6 +19,6 @@ OPTIONS
   --version   Show the script version.
   --copy      Copy files instead of make symlinks.
 SEE ALSO
-  mate-autogen(1)
+  cafe-autogen(1)
 AUTHOR
   Perberos <perberos@gmail.com>

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# mate-common - Run this to generate all the initial makefiles, etc.
+# cafe-common - Run this to generate all the initial makefiles, etc.
 #
 #   Copyright (C) 2011 Perberos <perberos@gmail.com>
 #
@@ -261,7 +261,7 @@ check_m4macros() {
 }
 
 # try to catch the case where the macros/ directory hasn't been cleared out.
-forbid_m4macro mate-cxx-check.m4
+forbid_m4macro cafe-cxx-check.m4
 
 want_glib_gettext=false
 want_intltool=false
@@ -322,18 +322,18 @@ for configure_ac in $configure_files; do
         require_m4macro appdata-xml.m4
     fi
 
-    # check to make sure mate-common macros can be found ...
+    # check to make sure cafe-common macros can be found ...
     if grep "^CAFE_COMMON_INIT" $configure_ac >/dev/null ||
        grep "^CAFE_DEBUG_CHECK" $configure_ac >/dev/null ||
        grep "^CAFE_MAINTAINER_MODE_DEFINES" $configure_ac >/dev/null; then
-        require_m4macro mate-common.m4
+        require_m4macro cafe-common.m4
     fi
     if grep "^CAFE_COMPILE_WARNINGS" $configure_ac >/dev/null ||
        grep "^CAFE_CXX_WARNINGS" $configure_ac >/dev/null; then
-        require_m4macro mate-compiler-flags.m4
+        require_m4macro cafe-compiler-flags.m4
     fi
     if grep "^CAFE_CODE_COVERAGE" $configure_ac >/dev/null; then
-        require_m4macro mate-code-coverage.m4
+        require_m4macro cafe-code-coverage.m4
     fi
 done
 
@@ -366,7 +366,7 @@ if $want_yelp_tools; then
 fi
 
 if [ "x$USE_COMMON_DOC_BUILD" = "xyes" ]; then
-    version_check mate-common DOC_COMMON mate-doc-common \
+    version_check cafe-common DOC_COMMON cafe-doc-common \
         $REQUIRED_DOC_COMMON_VERSION " "
 fi
 
@@ -410,8 +410,8 @@ for configure_ac in $configure_files; do
 	fi
 
 	if [ "x$USE_COMMON_DOC_BUILD" = "xyes" ]; then
-	    printbold "Running mate-doc-common..."
-	    mate-doc-common --copy || exit 1
+	    printbold "Running cafe-doc-common..."
+	    cafe-doc-common --copy || exit 1
 	fi
 
 	if grep "^AC_PROG_INTLTOOL" $basename >/dev/null ||

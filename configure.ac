@@ -1,7 +1,7 @@
 AC_PREREQ(2.54)
-AC_INIT([mate-common], [1.24.2], [https://github.com/mate-desktop/mate-common])
+AC_INIT([cafe-common], [1.24.2], [https://github.com/cafe-desktop/cafe-common])
 
-AC_CONFIG_SRCDIR([macros/mate-autogen])
+AC_CONFIG_SRCDIR([macros/cafe-autogen])
 
 AM_INIT_AUTOMAKE([1.9 foreign no-dist-gzip dist-xz check-news])
 
@@ -17,7 +17,7 @@ AC_CONFIG_FILES([
 Makefile
 macros/Makefile
 doc-build/Makefile
-doc-build/mate-doc-common
+doc-build/cafe-doc-common
 doc/Makefile
 ])
 

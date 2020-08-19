@@ -1,5 +1,5 @@
-man_MANS = mate-autogen.1 \
-           mate-doc-common.1
+man_MANS = cafe-autogen.1 \
+           cafe-doc-common.1
 
 EXTRA_DIST = $(man_MANS) \
              autogen.sh.example
