@@ -3,7 +3,7 @@
 ##########################################################
 requires:
   archlinux:
-    # Useful URL: https://git.archlinux.org/svntogit/community.git/tree/mate-common
+    # Useful URL: https://git.archlinux.org/svntogit/community.git/tree/cafe-common
     - autoconf
     - automake
     - gcc
@@ -11,15 +11,15 @@ requires:
     - make
 
   debian:
-    # Useful URL: https://github.com/mate-desktop/debian-packages
-    # Useful URL: https://salsa.debian.org/debian-mate-team/mate-common
+    # Useful URL: https://github.com/cafe-desktop/debian-packages
+    # Useful URL: https://salsa.debian.org/debian-cafe-team/cafe-common
     - autoconf
     - git
     - make
     - xz-utils
 
   fedora:
-    # Useful URL: https://src.fedoraproject.org/cgit/rpms/mate-common.git
+    # Useful URL: https://src.fedoraproject.org/cgit/rpms/cafe-common.git
     - autoconf
     - automake
     - gcc
@@ -45,11 +45,11 @@ releases:
   prerelease: false
   checksum: true
   file_glob: true
-  files: mate-common-*.tar.xz
+  files: cafe-common-*.tar.xz
   github_release:
     tags: true
     overwrite: true
     base_version: 1.20.0
     notify_servers:
-      - https://release.mate-desktop.org/release
+      - https://release.cafe-desktop.org/release
 

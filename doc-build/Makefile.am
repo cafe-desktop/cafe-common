@@ -1,6 +1,6 @@
-bin_SCRIPTS = mate-doc-common
+bin_SCRIPTS = cafe-doc-common
 
-pkgdatadir = $(datadir)/mate-common/data
+pkgdatadir = $(datadir)/cafe-common/data
 pkgdata_DATA =			\
 	omf.make		\
 	xmldocs.make		
@@ -8,5 +8,5 @@ pkgdata_DATA =			\
 EXTRA_DIST =			\
 	omf.make		\
 	xmldocs.make		\
-	mate-doc-common.in	\
+	cafe-doc-common.in	\
 	README

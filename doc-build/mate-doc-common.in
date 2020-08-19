@@ -2,7 +2,7 @@
 
 progname=`echo "$0" | sed 's%^.*/%%'`
 
-PROGRAM=mate-doc-common
+PROGRAM=cafe-doc-common
 PACKAGE=@PACKAGE@
 VERSION=@VERSION@
 
