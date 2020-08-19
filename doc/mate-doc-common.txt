@@ -4,7 +4,7 @@ SYNOPSIS
   mate-doc-common
 DESCRIPTION
   This script is used by mate-autogen to include the standard user
-  documentation build files in a MATE package.
+  documentation build files in a CAFE package.
   
   To automatically include the standard user documentation build files (omf.make
   and xmldocs.make) in you package, set USE_COMMON_DOC_BUILD=yes in autogen.sh

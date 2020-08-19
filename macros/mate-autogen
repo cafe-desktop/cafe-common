@@ -323,16 +323,16 @@ for configure_ac in $configure_files; do
     fi
 
     # check to make sure mate-common macros can be found ...
-    if grep "^MATE_COMMON_INIT" $configure_ac >/dev/null ||
-       grep "^MATE_DEBUG_CHECK" $configure_ac >/dev/null ||
-       grep "^MATE_MAINTAINER_MODE_DEFINES" $configure_ac >/dev/null; then
+    if grep "^CAFE_COMMON_INIT" $configure_ac >/dev/null ||
+       grep "^CAFE_DEBUG_CHECK" $configure_ac >/dev/null ||
+       grep "^CAFE_MAINTAINER_MODE_DEFINES" $configure_ac >/dev/null; then
         require_m4macro mate-common.m4
     fi
-    if grep "^MATE_COMPILE_WARNINGS" $configure_ac >/dev/null ||
-       grep "^MATE_CXX_WARNINGS" $configure_ac >/dev/null; then
+    if grep "^CAFE_COMPILE_WARNINGS" $configure_ac >/dev/null ||
+       grep "^CAFE_CXX_WARNINGS" $configure_ac >/dev/null; then
         require_m4macro mate-compiler-flags.m4
     fi
-    if grep "^MATE_CODE_COVERAGE" $configure_ac >/dev/null; then
+    if grep "^CAFE_CODE_COVERAGE" $configure_ac >/dev/null; then
         require_m4macro mate-code-coverage.m4
     fi
 done
