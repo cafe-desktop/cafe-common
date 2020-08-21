@@ -49,7 +49,7 @@ AC_DEFUN([CAFE_COMPILE_WARNINGS],[
 	warning_flags="-Wall -Wmissing-prototypes"
 	;;
     maximum|error)
-	warning_flags="-Wall -Wmissing-prototypes -Wbad-function-cast -Wcast-align -Wextra -Wno-unused-parameter -Wformat-nonliteral -Wmissing-declarations -Wmissing-field-initializers -Wnested-externs -Wpointer-arith -Wredundant-decls -Wshadow -Wstrict-prototypes -Werror=format-security"
+	warning_flags="-Wall -Wmissing-prototypes -Wbad-function-cast -Wcast-align -Wextra -Wformat-nonliteral -Wmissing-declarations -Wmissing-field-initializers -Wnested-externs -Wpointer-arith -Wredundant-decls -Wshadow -Wstrict-prototypes -Wunused-macros -Werror=format-security"
 	if test "$enable_compile_warnings" = "error" ; then
 	    warning_flags="$warning_flags -Werror"
 	fi
@@ -110,7 +110,7 @@ AC_DEFUN([CAFE_CXX_WARNINGS],[
         warning_flags="-Wall -Woverloaded-virtual"
 	;;
     maximum|error)
-        warning_flags="-Wall -Woverloaded-virtual -Wextra -Wshadow -Wformat-nonliteral -Werror=format-security -Wno-unused-parameter -Wpointer-arith -Wcast-align -Wmissing-declarations -Wredundant-decls"
+        warning_flags="-Wall -Woverloaded-virtual -Wextra -Wshadow -Wformat-nonliteral -Werror=format-security -Wpointer-arith -Wcast-align -Wmissing-declarations -Wredundant-decls -Wunused-macros"
 	if test "$enable_compile_warnings" = "error" ; then
 	    warning_flags="$warning_flags -Werror"
 	fi
