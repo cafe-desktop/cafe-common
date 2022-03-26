@@ -2,33 +2,8 @@
 # THE FOLLOWING LINES IS USED BY docker-build
 ##########################################################
 requires:
-  archlinux:
-    # Useful URL: https://git.archlinux.org/svntogit/community.git/tree/cafe-common
-    - autoconf
-    - automake
-    - gcc
-    - git
-    - make
-
   debian:
     # Useful URL: https://github.com/cafe-desktop/debian-packages
-    # Useful URL: https://salsa.debian.org/debian-cafe-team/cafe-common
-    - autoconf
-    - git
-    - make
-    - xz-utils
-
-  fedora:
-    # Useful URL: https://src.fedoraproject.org/cgit/rpms/cafe-common.git
-    - autoconf
-    - automake
-    - gcc
-    - git
-    - make
-    - redhat-rpm-config
-    - xz
-
-  ubuntu:
     - autoconf
     - git
     - make
