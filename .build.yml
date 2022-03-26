@@ -9,5 +9,13 @@ requires:
     - make
     - xz-utils
 
+build_scripts:
+  - mkdir html-report
+  - NOCONFIGURE=1 ./autogen.sh
+  - ./configure
+  - make
+  - make check
+  - make install
+
 after_scripts:
   - make distcheck
