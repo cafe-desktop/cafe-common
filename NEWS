@@ -1,3 +1,6 @@
-### cafe-common 0.0.1
+### cafe-common 1.25.0
 
-  * initial job
+  * mate-common 1.24.2 fork
+  * rename MATE to CAFE
+  * macros: disable -Wno-unused-parameter and enable -Wunused-macros in maximum
+  * ci: some improvements
