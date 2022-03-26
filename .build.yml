@@ -9,9 +9,6 @@ requires:
     - make
     - xz-utils
 
-variables:
-  - CFLAGS="-Wall -Werror=format-security"
-
 after_scripts:
   - make distcheck
 
