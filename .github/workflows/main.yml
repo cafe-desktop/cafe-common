@@ -54,8 +54,8 @@ jobs:
 
       - name: install docker-build
         run: |
-          curl -Ls -o install-dockerbuild https://github.com/cafe-desktop/cafe-dev-scripts/raw/master/travis/build/install-dockerbuild.sh
-          curl -Ls -o build-push https://github.com/cafe-desktop/cafe-dev-scripts/raw/master/travis/build/build-push.sh
+          curl -Ls -o install-dockerbuild https://github.com/cafe-desktop/cafe-dev-scripts/raw/devel/travis/build/install-dockerbuild.sh
+          curl -Ls -o build-push https://github.com/cafe-desktop/cafe-dev-scripts/raw/devel/travis/build/build-push.sh
           chmod +x install-dockerbuild build-push
           ./install-dockerbuild
 
