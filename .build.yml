@@ -15,3 +15,4 @@ build_scripts:
   - ./make-scanbuild
 #  - dpkg --get-selections|grep linux-image
   - uname -r
+  - uname -m
