@@ -63,7 +63,7 @@ jobs:
         env:
           TRAVIS_COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
         run: |
-          ./build-push debian:stable
+          ./build-push arm64v8/debian:testing
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
