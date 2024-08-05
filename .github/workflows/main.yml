@@ -25,6 +25,10 @@ on:
         required: true
       DOCKER_HUB_ACCESS_TOKEN:
         required: true
+      DOCKER_HUB_DISTRO:
+        required: false
+      GH_PAGES_DEPLOY:
+        required: false
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -66,11 +70,13 @@ jobs:
         env:
           TRAVIS_COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
         run: |
-          ./build-push
+          ./build-push ${{ secrets.DOCKER_HUB_DISTRO }}
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
-        if: ${{ github.event_name == 'push' }}
+        env:
+          GH_DEPLOY: ${{ secrets.GH_PAGES_DEPLOY }}
+        if: ${{ github.event_name == 'push' && env.GH_DEPLOY != 'false' }}
         with:
           branch: gh-pages
           folder: html-report
