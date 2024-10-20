@@ -30,6 +30,11 @@ on:
       GH_PAGES_DEPLOY:
         required: false
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -77,10 +82,6 @@ jobs:
         env:
           GH_DEPLOY: ${{ secrets.GH_PAGES_DEPLOY }}
         if: ${{ github.event_name == 'push' && env.GH_DEPLOY != 'false' }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./html-report
-          force_orphan: true
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
