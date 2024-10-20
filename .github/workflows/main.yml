@@ -73,14 +73,14 @@ jobs:
           ./build-push ${{ secrets.DOCKER_HUB_DISTRO }}
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: peaceiris/actions-gh-pages@main
         env:
           GH_DEPLOY: ${{ secrets.GH_PAGES_DEPLOY }}
         if: ${{ github.event_name == 'push' && env.GH_DEPLOY != 'false' }}
         with:
-          branch: gh-pages
-          folder: html-report
-          single-commit: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./html-report
+          force_orphan: true
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
