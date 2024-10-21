@@ -74,9 +74,10 @@ jobs:
           TRAVIS_COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
         run: |
           ./build-push ${{ secrets.DOCKER_HUB_DISTRO }}
+          egrep --exclude=\*.{png,svg,xcf} --exclude-dir=.git -lRZ $1 . | xargs -0 -l sed -i -e 's/testdeployurl/JamesIves\/github-pages-deploy-action@v4/g'
 
       - name: Deploy
-        uses: ${{ env.DEPLOYURL }}
+        uses: testdeployurl
         env:
           GH_DEPLOY: ${{ secrets.GH_PAGES_DEPLOY }}
         if: ${{ github.event_name == 'push' && env.GH_DEPLOY != 'false' }}
