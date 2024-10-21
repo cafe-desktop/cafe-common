@@ -76,7 +76,7 @@ jobs:
         run: |
           ./build-push ${{ secrets.DOCKER_HUB_DISTRO }}
 
-      - name: $DEPLOYURL
+      - name: "$DEPLOYURL"
         uses: JamesIves/github-pages-deploy-action@v4
         env:
           GH_DEPLOY: ${{ secrets.GH_PAGES_DEPLOY }}
