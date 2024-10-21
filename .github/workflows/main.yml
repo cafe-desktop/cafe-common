@@ -74,8 +74,8 @@ jobs:
 
       - name: Deploy
         env:
-          deployurl: 'JamesIves/github-pages-deploy-action@v4'
-        uses: ${{ deployurl }}
+          DEPLOYURL: 'JamesIves/github-pages-deploy-action@v4'
+        uses: ${{ env.DEPLOYURL }}
         env:
           GH_DEPLOY: ${{ secrets.GH_PAGES_DEPLOY }}
         if: ${{ github.event_name == 'push' && env.GH_DEPLOY != 'false' }}
