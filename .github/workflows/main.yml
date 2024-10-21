@@ -40,6 +40,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
+    env:
+      DEPLOYURL: 'JamesIves/github-pages-deploy-action@v4'
+
       - name: Install dependencies
         run: sudo apt-get install python3-github
     
@@ -73,8 +76,6 @@ jobs:
           ./build-push ${{ secrets.DOCKER_HUB_DISTRO }}
 
       - name: Deploy
-        env:
-          DEPLOYURL: 'JamesIves/github-pages-deploy-action@v4'
         uses: ${{ env.DEPLOYURL }}
         env:
           GH_DEPLOY: ${{ secrets.GH_PAGES_DEPLOY }}
