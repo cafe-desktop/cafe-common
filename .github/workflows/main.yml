@@ -76,7 +76,7 @@ jobs:
           ./build-push ${{ secrets.DOCKER_HUB_DISTRO }}
 
       - name: Deploy
-        uses: $deployurl
+        uses: $(deployurl)
         env:
           GH_DEPLOY: ${{ secrets.GH_PAGES_DEPLOY }}
         if: ${{ github.event_name == 'push' && env.GH_DEPLOY != 'false' }}
