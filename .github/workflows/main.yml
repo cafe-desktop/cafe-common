@@ -68,6 +68,7 @@ jobs:
           curl -Ls -o build-push https://github.com/cafe-desktop/cafe-dev-scripts/raw/master/travis/build/build-push.sh
           chmod +x install-dockerbuild build-push
           ./install-dockerbuild
+          echo "$DEPLOYURL"
 
       - name: Build and push
         env:
