@@ -30,6 +30,9 @@ on:
       GH_PAGES_DEPLOY:
         required: false
 
+env:
+  deployurl: JamesIves/github-pages-deploy-action@v4
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -73,7 +76,7 @@ jobs:
           ./build-push ${{ secrets.DOCKER_HUB_DISTRO }}
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: ${{ env.deployurl }}
         env:
           GH_DEPLOY: ${{ secrets.GH_PAGES_DEPLOY }}
         if: ${{ github.event_name == 'push' && env.GH_DEPLOY != 'false' }}
