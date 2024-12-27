@@ -1,3 +1,16 @@
+### cafe-common 2.0.0
+
+  * update AUTHORS
+  * macros,cafe-common:
+    - rename GTK -> CTK
+    - rename GDK/VTE -> CDK/BTE
+  * ci:
+    - add 'make-scanbuild' and 'exit-warning' scripts
+    - make cafe-common the main workflow for cafe repos
+    - docker: only try to login if user is defined
+    - add ability to choose distro and deploy
+    - use default branches for actions and docker
+
 ### cafe-common 1.25.0
 
   * mate-common 1.24.2 fork
