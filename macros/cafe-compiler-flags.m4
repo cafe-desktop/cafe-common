@@ -49,7 +49,7 @@ AC_DEFUN([CAFE_COMPILE_WARNINGS],[
 	warning_flags="-Wall -Wmissing-prototypes"
 	;;
     maximum|error)
-	warning_flags="-Wall -Wmissing-prototypes -Wbad-function-cast -Wcast-align -Wextra -Wformat-nonliteral -Wmissing-declarations -Wmissing-field-initializers -Wnested-externs -Wpointer-arith -Wredundant-decls -Wshadow -Wstrict-prototypes -Wunused-macros -Werror=format-security -fstrict-aliasing"
+	warning_flags="-Wall -Wmissing-prototypes -Wbad-function-cast -Wcast-align -Wextra -Wformat-nonliteral -Wmissing-declarations -Wnested-externs -Wpointer-arith -Wredundant-decls -Wshadow -Wstrict-prototypes -Wunused-macros -Werror=format-security -fstrict-aliasing"
 	if test "$enable_compile_warnings" = "error" ; then
 	    warning_flags="$warning_flags -Werror"
 	fi
