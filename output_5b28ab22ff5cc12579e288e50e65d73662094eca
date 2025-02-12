@@ -1,0 +1,76 @@
+[1mchecking for autoreconf >= 2.53...
+(B[m  testing autoreconf... found 2.72
+[1mChecking for forbidden M4 macros...
+(B[m[1mProcessing ./configure.ac
+(B[m[1mRunning autoreconf...
+(B[mautoreconf: export WARNINGS=no-portability
+autoreconf: Entering directory '.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force 
+autoreconf: configure.ac: tracing
+autoreconf: configure.ac: not using Libtool
+autoreconf: configure.ac: not using Intltool
+autoreconf: configure.ac: not using Gtkdoc
+autoreconf: running: /usr/bin/autoconf --force
+autoreconf: configure.ac: not using Autoheader
+autoreconf: running: automake --add-missing --copy --force-missing
+configure.ac:6: installing './install-sh'
+configure.ac:6: installing './missing'
+autoreconf: Leaving directory '.'
+Skipping configure process.
+scan-build: Using '/usr/lib/llvm-19/bin/clang' for static analysis
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether sleep supports fractional seconds... yes
+checking filesystem timestamp resolution... 0.01
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking xargs -n works... yes
+checking whether to enable maintainer-specific portions of Makefiles... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating macros/Makefile
+config.status: creating doc-build/Makefile
+config.status: creating doc-build/cafe-doc-common
+config.status: creating doc/Makefile
+scan-build: Analysis run complete.
+scan-build: Removing directory '/tmp/scan-build-2025-02-12-231648-5385-1' because it contains no reports.
+scan-build: No bugs found.
+scan-build: Using '/usr/lib/llvm-19/bin/clang' for static analysis
+Making all in macros
+make[1]: Entering directory '/rootdir/macros'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/rootdir/macros'
+Making all in doc-build
+make[1]: Entering directory '/rootdir/doc-build'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/rootdir/doc-build'
+Making all in doc
+make[1]: Entering directory '/rootdir/doc'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/rootdir/doc'
+make[1]: Entering directory '/rootdir'
+make[1]: Nothing to be done for 'all-am'.
+make[1]: Leaving directory '/rootdir'
+scan-build: Analysis run complete.
+scan-build: Removing directory '/rootdir/html-report/2025-02-12-231648-5802-1' because it contains no reports.
+scan-build: No bugs found.
+Making check in macros
+make[1]: Entering directory '/rootdir/macros'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/rootdir/macros'
+Making check in doc-build
+make[1]: Entering directory '/rootdir/doc-build'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/rootdir/doc-build'
+Making check in doc
+make[1]: Entering directory '/rootdir/doc'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/rootdir/doc'
+make[1]: Entering directory '/rootdir'
+make[1]: Nothing to be done for 'check-am'.
+make[1]: Leaving directory '/rootdir'
