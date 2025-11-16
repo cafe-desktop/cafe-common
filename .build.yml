@@ -12,5 +12,7 @@ requires:
     - xz-utils
 
 build_scripts:
-  - ./make-scanbuild
-  - ./exit-warning
+#|  - ./make-scanbuild
+#@|  - ./exit-warning
+  - ./debrepo-install
+  - ./builde-debs
