@@ -15,4 +15,4 @@ build_scripts:
 #|  - ./make-scanbuild
 #@|  - ./exit-warning
   - ./debrepo-install
-  - ./builde-debs
+  - ./build-debs
