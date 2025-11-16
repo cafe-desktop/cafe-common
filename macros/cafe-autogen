@@ -39,7 +39,7 @@ ECHO_C=
 ECHO_N=
 case `echo -n x` in
 -n*)
-  case `echo 'x\c'` in
+  case `printf 'x'` in
   *c*) ;;
   *)   ECHO_C='\c';;
   esac;;
