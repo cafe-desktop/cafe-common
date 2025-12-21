@@ -1,3 +1,10 @@
+### cafe-common 2.1.0
+
+  * cafe-compiler-flags:
+    - add -fstrict-aliasing in maximum
+    - remove -Wmissing-field-initializers
+
+
 ### cafe-common 2.0.0
 
   * update AUTHORS
@@ -10,6 +17,7 @@
     - docker: only try to login if user is defined
     - add ability to choose distro and deploy
     - use default branches for actions and docker
+
 
 ### cafe-common 1.25.0
 
