@@ -1,3 +1,10 @@
+### cafe-common 2.2.0
+
+  * macros,cafe-common:
+    - rename WNCK -> VNCK
+    - rename GDK_PIXBUF -> CDK_PPIXBUF
+
+
 ### cafe-common 2.1.0
 
   * cafe-compiler-flags:
