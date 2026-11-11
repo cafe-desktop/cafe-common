@@ -41,7 +41,7 @@ jobs:
     steps:
 
       - name: Install dependencies
-        run: sudo apt-get install python3-github
+        run: python -m pip install PyGithub
     
       - name: Check Out Repo 
         uses: actions/checkout@main
