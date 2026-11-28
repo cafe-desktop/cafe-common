@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI to Docker Hub
+name: docker
 
 # Controls when the action will run.
 on:
@@ -13,27 +13,35 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+  # Reusable workflow used by every cafe-desktop repo: their
+  # .github/workflows/main.yml is a thin trigger stub that calls this file.
+  # The build matrix below defines, in this single place, the distros and
+  # gh-pages policy for the whole organization.
   workflow_call:
-    inputs:
-      image_name:
-        required: true
-        type: string
-      tag:
-        type: string
     secrets:
       DOCKER_HUB_USERNAME:
         required: true
       DOCKER_HUB_ACCESS_TOKEN:
         required: true
-      DOCKER_HUB_DISTRO:
-        required: false
-      GH_PAGES_DEPLOY:
-        required: false
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  # One job per distro.  debian_testing builds the default 'debian' distro
+  # and is the only one that deploys html-report to gh-pages.
   build-and-deploy:
+    name: ${{ matrix.name }}
+    strategy:
+      # keep the distros independent: a failure in one does not cancel the others
+      fail-fast: false
+      matrix:
+        include:
+          - name: debian_stable
+            distro: debian:stable
+            gh_pages: 'false'
+          - name: debian_testing
+          - name: debian_sid
+            distro: debian:sid
+            gh_pages: 'false'
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -83,17 +91,14 @@ jobs:
         env:
           TRAVIS_COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
         run: |
-          ./build-push ${{ secrets.DOCKER_HUB_DISTRO }}
+          ./build-push ${{ matrix.distro }}
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         env:
-          GH_DEPLOY: ${{ secrets.GH_PAGES_DEPLOY }}
+          GH_DEPLOY: ${{ matrix.gh_pages }}
         if: ${{ github.event_name == 'push' && env.GH_DEPLOY != 'false' }}
         with:
           branch: gh-pages
           folder: html-report
           single-commit: true
-
-      - name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
