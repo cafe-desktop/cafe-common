@@ -2,7 +2,7 @@
 
 name: CI to Docker Hub
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
@@ -42,8 +42,8 @@ jobs:
 
       - name: Install dependencies
         run: python -m pip install PyGithub
-    
-      - name: Check Out Repo 
+
+      - name: Check Out Repo
         uses: actions/checkout@main
 
       - name: Login to Docker Hub
@@ -59,12 +59,25 @@ jobs:
         id: buildx
         uses: docker/setup-buildx-action@master
 
+      # Local copy of the helper scripts instead of downloading them from
+      # raw.githubusercontent.com: a transient GitHub error page (502/503/504)
+      # can no longer be saved and executed as a shell script.
+      - name: Check out dev-scripts
+        uses: actions/checkout@main
+        with:
+          repository: cafe-desktop/cafe-dev-scripts
+          ref: master
+          path: dev-scripts
+
       - name: install docker-build
+        env:
+          DEV_SCRIPTS_SRC: ${{ github.workspace }}/dev-scripts
         run: |
-          curl -Ls -o install-dockerbuild https://github.com/cafe-desktop/cafe-dev-scripts/raw/master/travis/build/install-dockerbuild.sh
-          curl -Ls -o build-push https://github.com/cafe-desktop/cafe-dev-scripts/raw/master/travis/build/build-push.sh
-          chmod +x install-dockerbuild build-push
-          ./install-dockerbuild
+          set -euo pipefail
+          chmod +x dev-scripts/travis/build/*.sh
+          dev-scripts/travis/build/install-dockerbuild.sh
+          cp dev-scripts/travis/build/build-push.sh build-push
+          chmod +x build-push
 
       - name: Build and push
         env:
